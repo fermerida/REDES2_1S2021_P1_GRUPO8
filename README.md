@@ -15,3 +15,6 @@ mayores pedidos, su actual infraestructura no les provee una solución integral.
 * Implementación 
 
 ## Grupo 8
+* Jennifer Lorena Rodríguez López		200714174 
+* Carlos Gabriel Peralta Cambrán		201314556 
+* Fernando Andrés Mérida Antón			201314713 
