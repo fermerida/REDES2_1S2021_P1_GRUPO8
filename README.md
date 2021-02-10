@@ -11,8 +11,8 @@ mayores pedidos, su actual infraestructura no les provee una solución integral.
 ## Contenido
 
 * Investigación 
-* Instalación
-* Implementación 
+* Screenshots de instalación por cada integrante
+* Implementación utilizando GNS3
 
 ## Grupo 8
 * Jennifer Lorena Rodríguez López		200714174 
