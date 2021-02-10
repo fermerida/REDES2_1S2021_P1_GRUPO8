@@ -1,0 +1,100 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = C:\Users\ferme\AppData\Local\Temp
+    udp = 10201
+    [[2691]]
+        image = C:\Users\ferme\Downloads\GNS3 IOS\GNS3 IOS\c2691-entservicesk9-mz.124-13b.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 2691
+        console = 2107
+        aux = 2507
+        cnfg = configs\R4.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R5 s0/2
+        f0/0 = NIO_udp:30004:127.0.0.1:20004
+        f0/1 = NIO_udp:30005:127.0.0.1:20005
+        x = -27.3431457505
+        y = -68.6690475583
+        z = 1.0
+    [[ROUTER R5]]
+        model = 2691
+        console = 2108
+        aux = 2508
+        cnfg = configs\R5.cfg
+        wic0/0 = WIC-2T
+        wic0/1 = WIC-2T
+        s0/0 = R2 s0/0
+        s0/1 = R3 s0/0
+        s0/2 = R4 s0/0
+        x = -287.558441227
+        y = -235.546247919
+        z = 1.0
+    [[ROUTER R2]]
+        model = 2691
+        console = 2105
+        aux = 2505
+        cnfg = configs\R2.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R5 s0/0
+        f0/0 = NIO_udp:30000:127.0.0.1:20000
+        f0/1 = NIO_udp:30001:127.0.0.1:20001
+        x = -536.460028205
+        y = -67.2548339959
+        z = 1.0
+    [[ROUTER R3]]
+        model = 2691
+        console = 2106
+        aux = 2506
+        cnfg = configs\R3.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R5 s0/1
+        f0/0 = NIO_udp:30002:127.0.0.1:20002
+        f0/1 = NIO_udp:30003:127.0.0.1:20003
+        x = -288.972654789
+        y = -70.0832611206
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[Cloud C5]]
+        symbol = Host
+        x = -40.9852813742
+        y = 76.566017178
+        hx = 19.0857864376
+        hy = -33.4852813742
+        z = 1.0
+        connections = R4:f0/0:nio_udp:30004:127.0.0.1:20004
+    [[Cloud C4]]
+        symbol = Host
+        x = -237.560966544
+        y = 80.8086578651
+        z = 1.0
+        connections = R3:f0/1:nio_udp:30003:127.0.0.1:20003
+    [[Cloud C3]]
+        symbol = Host
+        x = -330.899061661
+        y = 79.3944443027
+        z = 1.0
+        connections = R3:f0/0:nio_udp:30002:127.0.0.1:20002
+    [[Cloud C2]]
+        symbol = Host
+        x = -489.290980647
+        y = 80.8086578651
+        z = 1.0
+        connections = R2:f0/1:nio_udp:30001:127.0.0.1:20001
+    [[Cloud C1]]
+        symbol = Host
+        x = -576.972221514
+        y = 79.3944443027
+        z = 1.0
+        connections = R2:f0/0:nio_udp:30000:127.0.0.1:20000
+    [[Cloud C6]]
+        symbol = Host
+        x = 33.9680374315
+        y = 76.566017178
+        z = 1.0
+        connections = R4:f0/1:nio_udp:30005:127.0.0.1:20005
